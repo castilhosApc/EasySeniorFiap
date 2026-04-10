@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-small: 14px;
+  --font-medium: 16px;
+  --font-large: 20px;
+  --font-extra-large: 24px;
+  
+  --spacing-compact: 0.5rem;
+  --spacing-normal: 1rem;
+  --spacing-comfortable: 1.5rem;
+  --spacing-spacious: 2rem;
+}
+
+/* Contrast Levels */
+.contrast-normal {
+  --text-color: #1f2937;
+  --bg-color: #ffffff;
+  --border-color: #e5e7eb;
+}
+
+.contrast-high {
+  --text-color: #000000;
+  --bg-color: #ffffff;
+  --border-color: #000000;
+}
+
+.contrast-very-high {
+  --text-color: #000000;
+  --bg-color: #ffff00;
+  --border-color: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* Preferência "Reduzir movimento" (acessibilidade) */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Smooth animations */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Enhanced button styles for accessibility */
+button {
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:focus {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Large clickable areas */
+.clickable-area {
+  min-height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

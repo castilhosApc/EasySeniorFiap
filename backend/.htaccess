@@ -1,0 +1,12 @@
+Options -Indexes
+
+# Rewrite para URLs limpas (ex: /api/ai-assistant em vez de /api/ai-assistant.php)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^api/(.+)$ api/$1.php [L,QSA]
+
+# Bloquear acesso direto à pasta config
+<FilesMatch "^config/">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
